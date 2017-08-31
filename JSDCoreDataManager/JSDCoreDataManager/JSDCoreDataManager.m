@@ -20,6 +20,10 @@ static NSString * const dbName = @"jsd.db";
 @synthesize moc = _moc;
 
 - (NSManagedObjectContext *)moc{
+    if (_moc) {
+        return _moc;
+    }
+    @synchronized (self) {
     //实例化管理上下文
     _moc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
     //实例化管理对象模型
@@ -38,8 +42,10 @@ static NSString * const dbName = @"jsd.db";
     [psc addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:url options:options error:NULL];
     //给管理上下文指定持久化存储调度器
     _moc.persistentStoreCoordinator = psc;
+    }
     return _moc;
 }
+
 - (void)saveContext{
     
 }
