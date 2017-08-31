@@ -1,0 +1,2 @@
+# JSDCoreDataManager
+封装coreData中三大核心类NSManagedObjectContext、NSManagedObjectModel、NSPersistentStoreCoordinator，方便面向对象存储数据到数据库
