@@ -47,6 +47,19 @@ static NSString * const dbName = @"jsd.db";
 }
 
 - (void)saveContext{
+    NSManagedObjectContext *context = self.moc;
     
+    // 判断上下文中是否有数据发生变化
+    // `事务` 可以保存多个数据，不一定每次数据变化都需要保存，例如：for 增加多条记录，就可以最后调用一次保存操作即可！
+    if (![context hasChanges]) {
+        return;
+    }
+    
+    // 保存数据
+    NSError *error = nil;
+    
+    if (![context save:&error]) {
+        NSLog(@"保存数据出错 %@, %@", error, error.userInfo);
+    }
 }
 @end
