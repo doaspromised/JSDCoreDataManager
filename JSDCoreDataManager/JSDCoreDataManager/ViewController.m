@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSManagedObjectContext *moc = [[JSDCoreDataManager sharedManager] moc];
+    
 }
 
 

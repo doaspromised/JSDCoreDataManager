@@ -7,7 +7,6 @@
 //
 
 #import "JSDCoreDataManager.h"
-
 static JSDCoreDataManager *instance;
 static NSString * const dbName = @"jsd.db";
 @implementation JSDCoreDataManager
@@ -19,6 +18,7 @@ static NSString * const dbName = @"jsd.db";
     return instance;
 }
 @synthesize moc = _moc;
+
 - (NSManagedObjectContext *)moc{
     //实例化管理上下文
     _moc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
@@ -30,8 +30,14 @@ static NSString * const dbName = @"jsd.db";
     NSString *cacheDir = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).lastObject;
     NSString *path = [cacheDir stringByAppendingString:dbName];
     NSURL *url = [NSURL fileURLWithPath:path];
-    
-    [psc addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:url options:nil error:NULL];
+    //数据迁移策略
+    NSDictionary *options = @{
+                              NSMigratePersistentStoresAutomaticallyOption:@(YES),
+                              NSInferMappingModelAutomaticallyOption:@(YES)
+                              };
+    [psc addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:url options:options error:NULL];
+    //给管理上下文指定持久化存储调度器
+    _moc.persistentStoreCoordinator = psc;
     return _moc;
 }
 - (void)saveContext{
