@@ -13,6 +13,10 @@
 		071508831F5823C00074EB22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 071508811F5823C00074EB22 /* Main.storyboard */; };
 		071508851F5823C00074EB22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 071508841F5823C00074EB22 /* Assets.xcassets */; };
 		071508881F5823C00074EB22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 071508861F5823C00074EB22 /* LaunchScreen.storyboard */; };
+		071508911F5823FA0074EB22 /* JSDCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 071508901F5823FA0074EB22 /* JSDCoreDataManager.m */; };
+		071508941F5827EE0074EB22 /* jsdModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 071508921F5827EE0074EB22 /* jsdModel.xcdatamodeld */; };
+		0715089A1F5828C60074EB22 /* User+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 071508971F5828C60074EB22 /* User+CoreDataClass.m */; };
+		0715089B1F5828C60074EB22 /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 071508991F5828C60074EB22 /* User+CoreDataProperties.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,13 @@
 		071508841F5823C00074EB22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		071508871F5823C00074EB22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		071508891F5823C00074EB22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0715088F1F5823FA0074EB22 /* JSDCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSDCoreDataManager.h; sourceTree = "<group>"; };
+		071508901F5823FA0074EB22 /* JSDCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSDCoreDataManager.m; sourceTree = "<group>"; };
+		071508931F5827EE0074EB22 /* jsdModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = jsdModel.xcdatamodel; sourceTree = "<group>"; };
+		071508961F5828C60074EB22 /* User+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataClass.h"; sourceTree = "<group>"; };
+		071508971F5828C60074EB22 /* User+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataClass.m"; sourceTree = "<group>"; };
+		071508981F5828C60074EB22 /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataProperties.h"; sourceTree = "<group>"; };
+		071508991F5828C60074EB22 /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +69,14 @@
 		071508771F5823C00074EB22 /* JSDCoreDataManager */ = {
 			isa = PBXGroup;
 			children = (
+				071508951F5828740074EB22 /* DataModel */,
 				0715087B1F5823C00074EB22 /* AppDelegate.h */,
 				0715087C1F5823C00074EB22 /* AppDelegate.m */,
 				0715087E1F5823C00074EB22 /* ViewController.h */,
 				0715087F1F5823C00074EB22 /* ViewController.m */,
+				0715088F1F5823FA0074EB22 /* JSDCoreDataManager.h */,
+				071508901F5823FA0074EB22 /* JSDCoreDataManager.m */,
+				071508921F5827EE0074EB22 /* jsdModel.xcdatamodeld */,
 				071508811F5823C00074EB22 /* Main.storyboard */,
 				071508841F5823C00074EB22 /* Assets.xcassets */,
 				071508861F5823C00074EB22 /* LaunchScreen.storyboard */,
@@ -77,6 +92,17 @@
 				071508791F5823C00074EB22 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		071508951F5828740074EB22 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				071508961F5828C60074EB22 /* User+CoreDataClass.h */,
+				071508971F5828C60074EB22 /* User+CoreDataClass.m */,
+				071508981F5828C60074EB22 /* User+CoreDataProperties.h */,
+				071508991F5828C60074EB22 /* User+CoreDataProperties.m */,
+			);
+			path = DataModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,8 +176,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0715089B1F5828C60074EB22 /* User+CoreDataProperties.m in Sources */,
+				0715089A1F5828C60074EB22 /* User+CoreDataClass.m in Sources */,
+				071508941F5827EE0074EB22 /* jsdModel.xcdatamodeld in Sources */,
 				071508801F5823C00074EB22 /* ViewController.m in Sources */,
 				0715087D1F5823C00074EB22 /* AppDelegate.m in Sources */,
+				071508911F5823FA0074EB22 /* JSDCoreDataManager.m in Sources */,
 				0715087A1F5823C00074EB22 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,6 +341,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		071508921F5827EE0074EB22 /* jsdModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				071508931F5827EE0074EB22 /* jsdModel.xcdatamodel */,
+			);
+			currentVersion = 071508931F5827EE0074EB22 /* jsdModel.xcdatamodel */;
+			path = jsdModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0715086D1F5823C00074EB22 /* Project object */;
 }
